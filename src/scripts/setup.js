@@ -12,14 +12,17 @@ const {
   accountSetupComplete
 } = require('../lib/common')
 const _ = require('lodash')
+const { app, BrowserWindow } = require('electron')
+
+function createWindow() {}
 
 maybeWriteDefaultConfig().then(() => {
   const port = parseInt(process.env.PORT, 10) || 3000
   const dev = process.env.NODE_ENV !== 'production'
-  const app = next({ dev })
-  const handle = app.getRequestHandler()
+  const nextApp = next({ dev })
+  const handle = nextApp.getRequestHandler()
 
-  app.prepare().then(() => {
+  nextApp.prepare().then(() => {
     const server = express()
     server.use(bodyParser.urlencoded({ extended: false }))
     server.use(bodyParser.json())
@@ -122,7 +125,11 @@ maybeWriteDefaultConfig().then(() => {
     server.listen(port, error => {
       if (error) throw error
       console.log(`> Ready on http://localhost:${port}`)
-      opn(`http://localhost:${port}`)
+      // opn(`http://localhost:${port}`)
+
+      // Create electron window
+      let win = new BrowserWindow({ width: 1000, height: 800 })
+      win.loadURL('http://localhost:3000/mintable')
     })
   })
 })

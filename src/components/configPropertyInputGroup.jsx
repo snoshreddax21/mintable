@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import '../styles/style.less'
 import * as _ from 'lodash'
 import { fetch } from './helpers'
 import ConfigPropertyInput from './configPropertyInput'

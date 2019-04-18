@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import '../styles/style.less'
 import PlaidLink from 'react-plaid-link'
 import React from 'react'
 import Account from './account'

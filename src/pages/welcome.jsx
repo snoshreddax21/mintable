@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import '../styles/style.less'
 import Link from 'next/link'
 import ProgressSidebar from '../components/progressSidebar'
 import { fetch } from '../components/helpers'

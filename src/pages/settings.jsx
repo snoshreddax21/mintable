@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import '../styles/style.less'
 import { fetch } from '../components/helpers'
 const _ = require('lodash')
 import ConfigPropertyInputGroup from '../components/configPropertyInputGroup'
